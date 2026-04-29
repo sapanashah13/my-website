@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page title</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <script src="script.js"></script>
+        <!--Navbar-->
+        <header>
+            <nav>
+                <button onclick="toggleDarkMode()" id="darkToggle">🌙</button>
+
+
+               <div class="logo-container">
+                    <img src="images/logo.png" class="logo" alt="Logo">
+                    <h2>ISKCON LALITPUR</h2>
+               </div> 
+                <!--Hamburger icon-->
+                <div class="hamburger" onclick="toggleMenu()">☰</div> 
+
+                <ul id="nav-menu">
+                    <li><a href="#home" onclick="setActive(this)">Home</a></li>
+                    <li><a href="#about" onclick="setActive(this)">About</a></li>
+                    <li><a href="#contact" onclick="setActive(this)">Contact</a></li>
+                    <li><a href="#services" onclick="setActive(this)">services</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--Hero Section-->
+        <section id ="Home" class="hero">
+         <div class="hero-content">
+            <h1>Welcome to ISKCON LALITPUR</h1>
+            <p>Experience sprituality,devotion, and community.</p>
+            <button onclick="changeText()">Learn More</button>
+         </div>
+        </section>
+
+        <!--About Section-->
+        <section id ="About" class="About">
+            <h2>About us</h2>
+            <p>We are building simple website as practise of project.</p>
+
+        </section>
+
+        <!--Services and Events-->
+        <section id="services" class="services">
+            <h2>Our Services and Events</h2>
+
+            <div class="card">
+                <h3>Event 1</h3>
+                <p>Description here</p>
+            </div>
+
+            <div class="card">
+                <h3>Event 2</h3>
+                <p>Description here</p>
+            </div>
+
+        </section>
+
+        <!--Contact Section-->
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <form onsubmit="return validateForm()">
+                <input type="text" id="name" placeholder="Your name">
+                <input type="email" id ="email" placeholder="your email">
+                <textarea id="message" placeholder="Message"></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <!--Footer-->
+        <footer>
+            <p>© 2026 My Website. All rights reserved.</p>
+        </footer>
+       <button id ="topBtn" onclick="scrollToTop()">⬆</button>
+    </body>
+</html>

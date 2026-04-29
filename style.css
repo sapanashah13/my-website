@@ -1,0 +1,288 @@
+
+/* FORM */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* DEFAULT (LIGHT MODE) */
+body {
+    background: white;
+    color: black;
+    transition: 0.3s ease;
+}
+
+/* DARK MODE */
+body.dark-mode {
+    background: #121212 !important;
+    color: white !important;
+}
+/* Navbar in darkmode */
+body.dark-mode nav {
+    background: rgba(0,0,0,0.9);
+}
+
+/* Button styling */
+#darkToggle {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+input,textarea {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+
+/* HUMBURGER ICON */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* Desktop menu */
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+}
+
+
+/* underline (hidden initially) */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: yellow;
+    transition: width 0.3s ease;
+}
+/* Hover animation */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color:yellow;
+    transform: scale(1.05);
+}
+
+
+/* Active link */
+nav ul li a.active {
+    color: yellow;
+    font-weight: bold;
+}
+
+/* HERO SECTION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    z-index: 1000;
+
+    background: rgba(2, 2, 2, 0.4);  /* transparent effect */
+    backdrop-filter: blur(8px); /* moder glass effect */
+
+}
+nav.scrolled {
+    background: rgba(0,0,0,0.9);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+nav:hover {
+    box-shadow: 0 4px 15px rgba(255,255,0,0.2);
+}
+
+/* SECTION */
+
+section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+/* When section becomes visible */
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero {
+        height: 100vh;
+        background: linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url("images/temple.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+        color: white;
+        padding: 20px;
+    }
+
+/* HERO CONTENT */
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp is ease forwards;
+
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1.5s ease forwards;
+}
+
+/* Animation keyframes */
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+/* HERO BUTTON */
+.hero-content button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    background: yellow;
+    color: black;
+    transition: 0.3s;
+    opacity: 0;
+    animation: fadeUp 2s ease forwards;
+}
+
+.hero-content button:hover {
+    background: white;
+}
+
+
+/* MOBILE  RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+    
+
+
+}
+
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    display: none;
+
+    background: yellow;
+    color: black;
+    border: none;
+    padding: 12px 15px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+#topBtn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+body.dark-mode * {
+    color: white;
+}
